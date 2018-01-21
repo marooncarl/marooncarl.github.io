@@ -15,7 +15,6 @@ public class CloudGenerator : MonoBehaviour {
 
 	public Transform[] CloudPrefabs;
 	
-	//public int NumClouds = 5;
 	public float MinScale = 0.5f, MaxScale = 1.0f;
 	public Vector2 MoveDelta = new Vector2(0.2f, 0.0f);
 	public bool UseRandomMoveDelta = false;
@@ -30,96 +29,6 @@ public class CloudGenerator : MonoBehaviour {
 	float CreateCounter;
 	float MoveSpeed;
 	Vector3 ForwardAxis, SideAxis;
-
-	/*
-	ArrayList CloudList;
-
-
-	void Start() {
-		if (UseRandomMoveDelta) {
-			float cloudMoveSpeed = Random.Range(MinMoveSpeed, MaxMoveSpeed);
-			float randDir = Random.value * 360.0f * Mathf.Deg2Rad;
-			MoveDelta = new Vector2(Mathf.Cos(randDir) * cloudMoveSpeed, Mathf.Sin(randDir) * cloudMoveSpeed);
-		}
-
-		CloudList = new ArrayList();
-
-		for (int i = 0; i < NumClouds; ++i) {
-			int randIndex = (int)(Random.value * (CloudPrefabs.Length - 1));
-			Vector2 viewCenter = GetViewCenter();
-			Vector2 viewHalfSize = GetViewHalfSize();
-			Vector2 randPosition = new Vector2(viewCenter.x + viewHalfSize.x * Random.Range(-1.5f, 1.5f), viewCenter.y + viewHalfSize.y * Random.Range(-1.5f, 1.5f));
-			float randScale = Random.Range(MinScale, MaxScale);
-			Transform newCloud = (Transform)Instantiate(CloudPrefabs[randIndex], randPosition, Quaternion.Euler(0, 0, Random.value * 360.0f));
-			newCloud.localScale = new Vector3(randScale, randScale, randScale);
-			newCloud.SendMessage("SetMoveDelta", MoveDelta);
-			CloudList.Add(newCloud);
-
-			// try to re-position the new cloud so it isn't colliding
-			for (int j = 0; j < 5; ++j) {
-				if (!IsCloudColliding(newCloud)) {
-					break;
-				}
-
-				randPosition = new Vector2(viewCenter.x + viewHalfSize.x * Random.Range(-1.5f, 1.5f), viewCenter.y + viewHalfSize.y * Random.Range(-1.5f, 1.5f));
-				newCloud.position = randPosition;
-			}
-
-			// move the cloud outwards until it isn't colliding
-			while(IsCloudColliding(newCloud)) {
-				Vector2 moveAmount = new Vector2(newCloud.position.x - viewCenter.x, newCloud.position.y - viewCenter.y);
-				if (moveAmount == Vector2.zero) {
-					moveAmount.x = 1;
-				} else {
-					moveAmount = moveAmount.normalized;
-				}
-				Vector3 newPos = newCloud.position;
-				newPos.x += moveAmount.x;
-				newPos.y += moveAmount.y;
-				newCloud.position = newPos;
-			}
-		}
-	}
-
-	void Update() {
-
-	}
-
-	bool IsCloudColliding(Transform inCloud) {
-		if (inCloud.renderer == null) {
-			return false;
-		}
-
-		Rect inBounds = new Rect(inCloud.renderer.bounds.center.x - inCloud.renderer.bounds.extents.x,
-		                         inCloud.renderer.bounds.center.y - inCloud.renderer.bounds.extents.y,
-		                         inCloud.renderer.bounds.size.x, inCloud.renderer.bounds.size.y);
-
-		for (int i = 0; i < CloudList.Count; ++i) {
-			Transform otherCloud = (Transform)CloudList[i];
-			if (otherCloud == null || otherCloud == inCloud) {
-				continue;
-			}
-
-			Rect otherBounds = new Rect(otherCloud.renderer.bounds.center.x - otherCloud.renderer.bounds.extents.x,
-			                            otherCloud.renderer.bounds.center.y - otherCloud.renderer.bounds.extents.y,
-			                            otherCloud.renderer.bounds.size.x, otherCloud.renderer.bounds.size.y);
-
-			if (inBounds.Overlaps(otherBounds)) {
-				return true;
-			}
-		}
-
-		return false;
-	}
-
-	Vector2 GetViewCenter() {
-		return new Vector2(Camera.main.transform.position.x, Camera.main.transform.position.y);
-	}
-
-	Vector2 GetViewHalfSize() {
-		return new Vector2(Camera.main.orthographicSize * Camera.main.aspect, Camera.main.orthographicSize);
-	}
-	*/
 
 	void Start() {
 		int cloudSetting = PlayerPrefs.GetInt("CloudShadows", 1);
