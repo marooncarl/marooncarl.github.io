@@ -1,8 +1,6 @@
-h1 {
-	text-align: center;
-}
-
-h2 {
+body {
+	background-color: #1e1e22;
+	color: #eff7fc;
 	text-align: center;
 }
 
@@ -16,8 +14,4 @@ img {
 
 .work a {
 	padding: 1em;
-}
-
-footer p {
-	text-align: center;
 }
