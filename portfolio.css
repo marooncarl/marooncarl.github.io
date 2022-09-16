@@ -27,3 +27,17 @@ img {
 	height: 24em;
 	margin: auto;
 }
+
+footer {
+	background-color: #636467;
+	width: 100%;
+	min-height: 20em;
+	margin-top: 5em;
+	padding: 6em;
+}
+
+footer p {
+	width: 60%;
+	margin: 0 auto;
+	padding: 1em;
+}
