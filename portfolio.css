@@ -49,15 +49,21 @@ img {
 }
 
 footer {
-	background-color: #636467;
-	width: 100%;
-	min-height: 20em;
-	margin-top: 5em;
-	padding: 6em;
+	background-color: #4b4b50;
+	border-radius: 8px;
+	width: 42em;
+	min-height: 14em;
+	padding: 2em 4em;
+	margin: 4em auto;
 }
 
 footer p {
-	width: 60%;
-	margin: 0 auto;
-	padding: 1em;
+	margin: 1em;
+}
+
+.photo {
+	border-radius: 50%;
+	width: 10em;
+	height: 10em;
+	float: left;
 }
