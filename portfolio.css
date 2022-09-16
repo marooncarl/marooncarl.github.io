@@ -1,3 +1,11 @@
+h1 {
+	text-align: center;
+}
+
+h2 {
+	text-align: center;
+}
+
 img {
 	border-radius: 10px;
 	width: 38.4em;
@@ -8,4 +16,8 @@ img {
 
 .work a {
 	padding: 1em;
+}
+
+footer p {
+	text-align: center;
 }
