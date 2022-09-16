@@ -10,6 +10,18 @@ body {
 	text-align: center;
 }
 
+h1 {
+	font-size: 3em;
+	border-bottom: 1px solid #eff7fc;
+	width: 12em;
+	margin: 0 auto;
+	padding: 0.1em;
+}
+
+h2 {
+	padding: 0.2em;
+}
+
 .work {
 	max-width: 100em;
 	margin: 0 auto;
