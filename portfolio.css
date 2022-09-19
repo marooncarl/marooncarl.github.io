@@ -8,7 +8,7 @@ body {
 	--bg-color: #1e1e22;
 	--text-color: #eff7fc;
 	--section-color: #4b4b50;
-	--tooltip-color: #00002266;
+	--tooltip-color: #00082266;
 	
 	background-color: var(--bg-color);
 	color: var(--text-color);
@@ -42,6 +42,8 @@ h2 {
 
 .work a {
 	--img-border-radius: 12px;
+	--img-width: 38.4em;
+	--img-height: 24em;
 	
 	margin: 1em;
 	text-decoration: none;
@@ -49,11 +51,12 @@ h2 {
 	border-radius: 24px;
 	border: 3px solid var(--text-color);
 	padding: 10px;
+	position: relative;
 }
 
 img {
-	width: 38.4em;
-	height: 24em;
+	width: var(--img-width);
+	height: var(--img-height);
 	margin: auto;
 	border-radius: var(--img-border-radius);
 }
@@ -62,7 +65,6 @@ img {
 	position: relative;
 	top: 0.5em;
 	height: 0;
-	background-color: transparent;
 	color: transparent;
 	font-size: 1.5em;
 	z-index: 0;
@@ -74,13 +76,40 @@ img {
 
 .work a:hover h3::before {
 	background-color: var(--tooltip-color);
-	height: 2.5em;
+	height: 2.4em;
 	width: 100%;
 	content: "";
 	display: block;
 	position: absolute;
-	top: -0.8em;
+	top: -0.5em;
 	border-radius: var(--img-border-radius) var(--img-border-radius) 0 0;
+	z-index: -1;
+}
+
+.work a p {
+	position: absolute;
+	top: 22.63em;
+	width: var(--img-width);
+	color: transparent;
+	font-size: 1.0em;
+	z-index: 0;
+	margin: 0;
+	padding: 0;
+}
+
+.work a:hover p {
+	color: var(--text-color);
+}
+
+.work a:hover p::before {
+	background-color: var(--tooltip-color);
+	top: -0.8em;
+	height: 2.8em;
+	width: 100%;
+	content: "";
+	display: block;
+	position: absolute;
+	border-radius: 0 0 var(--img-border-radius) var(--img-border-radius);
 	z-index: -1;
 }
 
