@@ -5,8 +5,12 @@
 }
 
 body {
-	background-color: #1e1e22;
-	color: #eff7fc;
+	--bg-color: #1e1e22;
+	--text-color: #eff7fc;
+	--section-color: #4b4b50;
+	
+	background-color: var(--bg-color);
+	color: var(--text-color);
 	text-align: center;
 }
 
@@ -18,7 +22,7 @@ header {
 
 h1 {
 	font-size: 3em;
-	border-bottom: 1px solid #eff7fc;
+	border-bottom: 1px solid var(--text-color);
 	width: 12em;
 	margin: 0 auto;
 	padding: 0.1em;
@@ -43,7 +47,7 @@ h2 {
 
 img {
 	border-radius: 24px;
-	border: 3px solid #eff7fc;
+	border: 3px solid var(--text-color);
 	padding: 10px;
 	width: 38.4em;
 	height: 24em;
@@ -51,7 +55,7 @@ img {
 }
 
 footer {
-	background-color: #4b4b50;
+	background-color: var(--section-color);
 	border-radius: 8px;
 	width: 42em;
 	min-height: 14em;
